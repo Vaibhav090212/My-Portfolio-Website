@@ -31,12 +31,14 @@ canvas#starfield {
 }
 
 .hero {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 0 20px;
 }
+
 
 .glow {
   font-size: 3rem;
@@ -460,4 +462,5 @@ img {
     padding: 0.8rem;
   }
 }
+
 
