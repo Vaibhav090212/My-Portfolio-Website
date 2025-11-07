@@ -1,0 +1,359 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: auto;        /* allow page height to expand */
+  min-height: 100%;    /* at least full viewport */
+  background:black;
+  color: #0ff;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;  /* horizontal scroll hidden */
+  overflow-y: auto;    /* vertical scroll enabled */
+  scroll-behavior: smooth;
+}
+
+
+canvas#starfield {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none; /* FIX: allow clicks through canvas */
+}
+
+
+.neon {
+  color: #00ffe7;
+  font-size: 3rem;
+  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 25px #0ff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.glow {
+  font-size: 3rem;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7, 0 0 30px #00ffe7;
+}
+
+
+.tagline {
+  color: #ccc;
+  font-size: 1.2rem;
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #0ff;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards, blink-caret 0.7s step-end infinite;
+}
+p {
+  font-size: 1.2rem;
+  margin-top: 30px;
+  color: #aaa;
+}
+
+/* Particle canvas */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+/* Cursor blinking */
+.tagline::after {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #0ff; }
+}
+
+nav {
+  position: absolute;
+  right: 35%;
+  top: 20px;
+  display: flex;
+  gap: 25px;
+  z-index: 2;
+}
+
+nav a {
+  color: #00ffe7;
+  text-decoration: none;
+  font-size: 1.1rem;
+  text-shadow: 0 0 5px #00ffe7;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+
+
+
+
+
+.hero-about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  max-height: 100vh;    /* ensure it never exceeds viewport */
+  overflow: hidden;     /* cut off excess */
+
+
+}
+
+/* Profile Image Neon Pulse + Hover */
+.profile-pic {
+  width: 360px;
+  height: 380px;
+  border-radius: 50%;
+  border: 3px solid #00ffe7;
+  object-fit: cover;
+  animation: neonPulse 2.5s infinite alternate;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  margin-top: 2rem;
+}
+
+.profile-pic:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px #00ffe7, 0 0 60px #00ffe7, 0 0 80px #00ffe7;
+}
+
+@keyframes neonPulse {
+  0% {
+    box-shadow: 0 0 20px #00ffe7, 0 0 35px #00ffe7, 0 0 50px #00ffe7;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px #00ffe7, 0 0 45px #00ffe7, 0 0 65px #00ffe7;
+    transform: scale(1.03);
+  }
+  100% {
+    box-shadow: 0 0 20px #00ffe7, 0 0 35px #00ffe7, 0 0 50px #00ffe7;
+    transform: scale(1);
+  }
+}
+
+/* Intro Text Styling */
+.intro-text {
+  max-width: 600px;
+  opacity: 0;
+  animation: textFadeIn 1.5s forwards;
+  margin-right: 6rem;
+}
+
+.intro-text p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin: 0.8rem 0;
+  line-height: 1.5;
+}
+
+/* Glowing Heading */
+.intro-text h1.glow {
+  font-size: 3rem;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7, 0 0 30px #00ffe7;
+  opacity: 0;
+  animation: textFadeIn 1.5s forwards;
+}
+
+/* Fade-In Animations with Delay for Paragraphs */
+.fade-in {
+  opacity: 0;
+  animation: textFadeIn 1.5s forwards;
+}
+
+.fade-in.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.fade-in.delay-2 {
+  animation-delay: 1s;
+}
+
+/* Keyframes */
+@keyframes textFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+/* ===========================================================
+   ✅ PROJECTS SECTION
+   =========================================================== */
+
+.projects-grid-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 2; /* content above background */
+}
+
+.hero1 {
+  position: sticky; 
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.project-card {
+  background: #111;
+  border: 2px solid #00ffe7;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px #00ffe7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  color: #fff;
+  text-decoration: none; /* removes underline for links */
+  display: block;        /* ensures link fills card */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffe7;
+}
+
+/* Optional: project images inside cards */
+.project-card img {
+  max-width: 80px;
+  height: auto;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+
+
+/* ===========================================================
+   ✅ CERTIFICATIONS SECTION (Only This Part Updated)
+   =========================================================== */
+
+.cert-grid-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 2; /* ensures content above background */
+}
+
+h1 {
+  text-align: center;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7;
+  margin-bottom: 1.5rem;
+  margin-top: 2cm;
+}
+
+/* Scrollable Certification Section */
+.cert-scrollable {
+  max-height: 80vh;         /* enables internal scroll */
+  overflow-y: auto;
+  padding-right: 8px;       /* space for scrollbar */
+}
+
+/* Custom scrollbar for certs */
+.cert-scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+.cert-scrollable::-webkit-scrollbar-track {
+  background: #111;
+}
+.cert-scrollable::-webkit-scrollbar-thumb {
+  background: #00ffe7;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #00ffe7;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin: 1cm;
+  gap: 1.5rem;
+}
+
+img {
+  max-width: 20%;
+  height: 20%;
+  display: interal-block;
+  margin: auto;
+}
+
+
+.cert-card {
+  background: #111;
+  border: 2px solid #00ffe7;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px #00ffe7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  color: #fff;
+}
+
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #00ffe7;
+}
+
+/* ===========================================================
+   CONTACT LINKS (Unchanged)
+   =========================================================== */
+
+.contact-link {
+  color: #00aaff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #66ccff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.contact-link:visited {
+  color: #8000ff;
+  text-shadow: 0 0 10px #8000ff;
+}
+
+.contact-link:active {
+  color: #ff6600;
+  text-shadow: 0 0 15px #ff6600;
+}
