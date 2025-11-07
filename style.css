@@ -357,3 +357,107 @@ img {
   color: #ff6600;
   text-shadow: 0 0 15px #ff6600;
 }
+
+
+
+
+
+
+/* ===========================================================
+   ✅ RESPONSIVE FIXES
+   =========================================================== */
+
+@media (max-width: 1024px) {
+  nav {
+    right: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar stacks vertically on smaller screens */
+  nav {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  /* Hero text scales */
+  .hero {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    padding: 80px 20px;
+  }
+
+  .glow {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    white-space: normal;
+    border: none;
+    animation: none; /* stop typing effect on small screens */
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Profile image shrinks */
+  .profile-pic {
+    width: 220px;
+    height: 220px;
+    margin: 1rem auto;
+  }
+
+  .intro-text {
+    margin: 1rem;
+    text-align: center;
+  }
+
+  /* Projects and Certifications grid adjusts */
+  .projects-grid, .cert-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0.5rem;
+  }
+
+  img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  h1 {
+    margin-top: 1.5rem;
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .glow {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .project-card, .cert-card {
+    padding: 0.8rem;
+  }
+}
+
