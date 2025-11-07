@@ -45,15 +45,14 @@ canvas#starfield {
 }
 
 
-.tagline {
-  color: #ccc;
-  font-size: 1.2rem;
-  font-family: 'Courier New', monospace;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #0ff;
-  width: 0;
-  animation: typing 4s steps(40, end) forwards, blink-caret 0.7s step-end infinite;
+@media (max-width: 768px) {
+  .tagline {
+    font-size: 1rem;
+    white-space: normal;
+    border: none;
+    animation: none; /* disable typing */
+    width: auto;     /* ensure text becomes visible */
+  }
 }
 
 
@@ -460,3 +459,4 @@ img {
     padding: 0.8rem;
   }
 }
+
